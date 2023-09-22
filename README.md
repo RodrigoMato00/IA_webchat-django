@@ -20,8 +20,8 @@ A Django project that provides a chat interface and API. The bot takes in a URL 
 
 ```bash
 
-python3 -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+python3 -m venv newvenv
+source newvenv/bin/activate  # On Windows, use `newvenv\Scripts\activate`
 ``` 
 3. **Install Dependencies:** 
 
