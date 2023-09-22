@@ -13,15 +13,14 @@ A Django project that provides a chat interface and API. The bot takes in a URL 
 1. **Clone the Repository:** 
 
 ```bash
-
-git clone [[your-repository-link](https://github.com/RodrigoMato00/IA_webchat-django.git)]
-cd [IA_webchat-django]
-``` 
+   git clone [your-repository-link](https://github.com/RodrigoMato00/IA_webchat-django.git)
+   cd IA_webchat-django
+```
 2. **Set Up a Virtual Environment (optional but recommended):** 
 
 ```bash
 
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 ``` 
 3. **Install Dependencies:** 
@@ -34,19 +33,19 @@ pip install -r requirements.txt
 
 ```
 
-python manage.py migrate
+python3 manage.py migrate
 ``` 
 5. **Create Superuser (for Django Admin):** 
 
 ```
 
-python manage.py createsuperuser
+python3 manage.py createsuperuser
 ``` 
 6. **Run the Development Server:** 
 
 ```
 
-python manage.py runserver
+python3 manage.py runserver
 ```
 ## Usage:
 ### Web Chat Interface:
