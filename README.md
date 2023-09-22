@@ -14,8 +14,8 @@ A Django project that provides a chat interface and API. The bot takes in a URL 
 
 ```bash
 
-git clone [your-repository-link]
-cd [your-repository-directory]
+git clone [[your-repository-link](https://github.com/RodrigoMato00/IA_webchat-django.git)]
+cd [IA_webchat-django]
 ``` 
 2. **Set Up a Virtual Environment (optional but recommended):** 
 
