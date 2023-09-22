@@ -1,78 +1,100 @@
-ChatBot API
+# ChatBot API
+
 A Django project that provides a chat interface and API. The bot takes in a URL and user message and responds based on the content of the provided URL. The bot is designed to be aware of the content of the provided URL and will generate a response accordingly.
+## Features:
+1. Web chat interface where users can input a URL and chat based on the content.
+2. API endpoint to chat programmatically, given a URL and user message.
+3. User authentication using tokens.
+## Installation & Setup:
+### Requirements:
+- Python
+- Django
+### Steps: 
+1. **Clone the Repository:** 
 
-Features:
-Web chat interface where users can input a URL and chat based on the content.
-API endpoint to chat programmatically, given a URL and user message.
-User authentication using tokens.
-Installation & Setup:
-Requirements:
-Python
-Django
-Steps:
-Clone the Repository:
+```bash
 
-bash
-Copy code
 git clone [your-repository-link]
 cd [your-repository-directory]
-Set Up a Virtual Environment (optional but recommended):
+``` 
+2. **Set Up a Virtual Environment (optional but recommended):** 
 
-bash
-Copy code
+```bash
+
 python -m venv venv
 source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-Install Dependencies:
+``` 
+3. **Install Dependencies:** 
 
-Copy code
+```
+
 pip install -r requirements.txt
-Migrate Database:
+``` 
+4. **Migrate Database:** 
 
-Copy code
+```
+
 python manage.py migrate
-Create Superuser (for Django Admin):
+``` 
+5. **Create Superuser (for Django Admin):** 
 
-Copy code
+```
+
 python manage.py createsuperuser
-Run the Development Server:
+``` 
+6. **Run the Development Server:** 
 
-Copy code
+```
+
 python manage.py runserver
-Usage:
-Web Chat Interface:
-Visit http://127.0.0.1:8000/chatapp/chat-interface/ to access the chat interface.
+```
+## Usage:
+### Web Chat Interface:
 
-API Usage:
-Authenticate:
+Visit `http://127.0.0.1:8000/chatapp/chat-interface/` to access the chat interface.
+### API Usage: 
+1. **Authenticate:** 
 
-Send a POST request to http://127.0.0.1:8000/chatapp/login/ with your username and password to obtain a token.
+Send a `POST` request to `http://127.0.0.1:8000/chatapp/login/` with your username and password to obtain a token.
 
 Example request body:
 
-json
-Copy code
+```json
+
 {
   "username": "your_username",
   "password": "your_password"
 }
-The response will include a token.
+```
 
-Chat API:
 
-Send a POST request to http://127.0.0.1:8000/chatapp/chat-api/ with the token in the header and the URL and user message in the body.
+
+The response will include a token. 
+2. **Chat API:** 
+
+Send a `POST` request to `http://127.0.0.1:8000/chatapp/chat-api/` with the token in the header and the URL and user message in the body.
 
 Example request headers:
 
-makefile
-Copy code
+```makefile
+
 Authorization: Token your_token
+```
+
+
+
 Example request body:
 
-json
-Copy code
+```json
+
 {
   "url": "https://example.com",
   "user_message": "Tell me about this."
 }
-Swagger Documentation:
-For detailed API documentation, visit http://127.0.0.1:8000/swagger/.
+```
+### Swagger Documentation:
+
+For detailed API documentation, visit `http://127.0.0.1:8000/swagger/`.
+## Support:
+
+For any queries, reach out to `RodrigoMato00`.---
