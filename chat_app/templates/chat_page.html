@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Page</title>
+    <style>
+        /* Estilos básicos para el chat */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #chat-container {
+            max-width: 600px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+        #chat-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .question {
+            background-color: #f1f1f1;
+        }
+        .response {
+            background-color: #e5fde5;
+        }
+        form {
+            margin-top: 20px;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chat-container">
+    <div id="chat-header">
+        <!-- <h1>Chatting with: {{ chat_record.url }}</h1> -->
+    </div>
+
+    {% load filters %}
+    {% for conversation in chat_record.conversations %}
+        <div class="message question">
+            <p><strong>You:</strong> {{ conversation.question }}</p>
+        </div>
+        <div class="message response">
+            <p><strong>AivaWink:</strong> {{ conversation.answer|clean_response }}</p>
+        </div>
+    {% endfor %}
+
+    <!-- Formulario de pregunta -->
+    <form method="post">
+        {% csrf_token %}
+        <label>Ask another question:</label>
+        <input type="hidden" name="url" value="{{ chat_record.url }}"> <!-- Usamos un campo oculto para mantener la misma URL -->
+        <input type="text" name="user_message" required>
+        <input type="submit" value="Ask">
+    </form>
+    <a id="endOfChat"></a>
+
+</div>
+
+<!-- Botón para cambiar la URL -->
+<a href="{% url 'chat_with_url' %}">Change URL</a>
+
+</body>
+</html>

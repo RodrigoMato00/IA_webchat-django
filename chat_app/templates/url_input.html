@@ -1,0 +1,6 @@
+<form method="post">
+    {% csrf_token %}
+    <label>URL:</label>
+    <input type="text" name="url" value="{{ request.session.chat_record.url }}" required>
+    <input type="submit" value="Chat with URL">
+</form>
